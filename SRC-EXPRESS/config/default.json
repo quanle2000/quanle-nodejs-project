@@ -1,0 +1,16 @@
+
+{"mysql": {
+    "connectionLimit" : 100,
+    "database": "qlbh",
+    "host": "localhost",
+    "user": "root",
+    "password": "",
+    "port": 3306
+},
+"pagination":{
+    "limit": 6
+},
+"authentication":{
+    "saltRounds": 8
+}
+}

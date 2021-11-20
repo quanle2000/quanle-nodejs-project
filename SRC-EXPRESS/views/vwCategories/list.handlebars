@@ -1,0 +1,56 @@
+
+  {{#if this.empty}}
+  <div class="card">
+  <div class="card-header">
+    <h4>Categories</h4>
+  </div>
+    <div class="card-body ">
+    <p1 class="card-title">Không có dữ liệu</p1>
+  </div>
+  <div class="card-footer text-muted">
+    Footer
+  </div>
+</div>
+  {{else}}
+    <div class="card">
+    <div class="card-header d-flex justify-content-between">
+            <h4>Categories</h4>
+            <a name="" id="" class="btn btn-outline-success justify" href="/admin/categories/add" role="button">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            Add Category
+            </a>            
+    </div>
+    
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">CatID</th>
+      <th scope="col">
+          Category
+        </th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this.categories}}
+    <tr>
+      <th scope="row" class="text-center">{{CatID}}</th>
+      <td>{{CatName}}</td>
+      <td class="text-right">
+          <a class="btn btn-primary btn-sm" href="/admin/categories/edit?id={{CatID}}" role="button" title="edit category">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+          </a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+    <div class="card-footer text-muted">
+        Footer
+    </div>
+</div>
+  {{/if}}
+  
+
+
+ 

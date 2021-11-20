@@ -1,0 +1,63 @@
+<div class="card">
+  <div class="card-header">
+    Products
+  </div>
+  {{#if this.empty}}
+  <div class="card-body">
+    <p1 class="card-title">Không có dữ liệu</p1>
+  </div>
+  {{else}}
+  <div class="card-body">
+    <div class="row">
+      {{#each this.products}}
+      <div class="col-sm-4 mb-3">
+        <div class="card h-100">
+          <img src="/public/imgs/sp/{{ProID}}/main_thumbs.jpg" alt="{{ProName}}" title="{{ProName}}:{{Price}}"
+            class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{ProName}}</h5>
+            <h4 class="card-title text-danger">{{format_number Price}}</h4>
+            <p class="card-text">{{TinyDes}}</p>
+          </div>
+          <div class="card-footer text-muted">
+            <a class="btn btn-sm btn-primary" href="javascript:" role="button">
+              <i class="fa fa-eye" aria-hidden="true">
+              </i>
+              Detail
+            </a>
+            <a class="btn btn-sm btn-success" href="javascript:" role="button">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              Add to Cart
+            </a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item  {{#unless can_go_prev}}disabled{{/unless}}">
+          <a class="page-link" href="?page={{prev_value}}">Previous</a>
+        </li>
+        {{#each this.page_items}}
+        {{#if isActive}}
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="?page={{value}}">{{value}}</a>
+          </li>
+        {{else}}
+          <li class="page-item">
+            <a class="page-link" href="?page={{value}}">{{value}}</a>
+          </li>
+        {{/if}}
+        {{/each}}
+        <li class="page-item  {{#unless can_go_next}}disabled{{/unless}}">
+          <a class="page-link" href="?page={{next_value}}">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  {{/if}}
+  <div class="card-footer text-muted">
+    Footer
+  </div>
+</div>
